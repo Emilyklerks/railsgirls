@@ -1,0 +1,32 @@
+<%= form_with(model: activiteit, local: true) do |form| %>
+  <% if activiteit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(activiteit.errors.count, "error") %> prohibited this activiteit from being saved:</h2>
+
+      <ul>
+      <% activiteit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :naam %>
+    <%= form.text_field :naam, id: :activiteit_naam %>
+  </div>
+
+  <div class="field">
+    <%= form.label :beschrijving %>
+    <%= form.text_area :beschrijving, id: :activiteit_beschrijving %>
+  </div>
+
+  <div class="field">
+    <%= form.label :afbeelding %>
+    <%= form.text_field :afbeelding, id: :activiteit_afbeelding %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

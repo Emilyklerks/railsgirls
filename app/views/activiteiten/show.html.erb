@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Naam:</strong>
+  <%= @activiteit.naam %>
+</p>
+
+<p>
+  <strong>Beschrijving:</strong>
+  <%= @activiteit.beschrijving %>
+</p>
+
+<p>
+  <strong>Afbeelding:</strong>
+  <%= @activiteit.afbeelding %>
+</p>
+
+<%= link_to 'Edit', edit_activiteit_path(@activiteit) %> |
+<%= link_to 'Back', activiteiten_path %>

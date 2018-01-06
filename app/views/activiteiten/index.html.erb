@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Activiteiten</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Naam</th>
+      <th>Beschrijving</th>
+      <th>Afbeelding</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activiteiten.each do |activiteit| %>
+      <tr>
+        <td><%= activiteit.naam %></td>
+        <td><%= activiteit.beschrijving %></td>
+        <td><%= activiteit.afbeelding %></td>
+        <td><%= link_to 'Show', activiteit %></td>
+        <td><%= link_to 'Edit', edit_activiteit_path(activiteit) %></td>
+        <td><%= link_to 'Destroy', activiteit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activiteit', new_activiteit_path %>
